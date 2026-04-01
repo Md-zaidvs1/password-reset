@@ -17,7 +17,7 @@ const ResetPassword = () => {
     const verifyToken = async () => {
       try {
         // Changed Render URL back to localhost for testing
-        await axios.get(`http://localhost:5000/api/auth/verify-token/${token}`);
+        await axios.get(`https://password-reset-backend-m4n4.onrender.com/api/auth/verify-token/${token}`);
         setIsValidToken(true); 
       } catch (err) {
         setError(err.response?.data?.message || "Invalid or expired link");
@@ -36,7 +36,7 @@ const ResetPassword = () => {
 
     try {
       // Changed Render URL back to localhost for testing
-      const response = await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, {
+      const response = await axios.post(`https://password-reset-backend-m4n4.onrender.com/api/auth/reset-password/${token}`, {
         password,
       });
       setMessage(response.data.message);

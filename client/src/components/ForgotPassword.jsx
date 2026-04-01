@@ -13,7 +13,7 @@ const ForgotPassword = () => {
 
     try {
       // Changed Render URL back to localhost for testing
-      const response = await axios.post("http://localhost:5000/api/auth/forgot-password", {
+      const response = await axios.post("https://password-reset-backend-m4n4.onrender.com/api/auth/forgot-password", {
         email,
       });
       setMessage(response.data.message);
